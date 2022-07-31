@@ -68,7 +68,7 @@
     <div class="hero-container" data-aos="fade-in">
       <h1 style="line-height:110%;"> Héctor de la Torre
       </h1>
-      <p>I'm <span class="typed" data-typed-items="Developer, Data Scientist, Machine Learning Engineer"></span></p>
+      <p>I'm <span class="typed" data-typed-items="Backend Developer, Data Scientist, Machine Learning Engineer"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -546,7 +546,8 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action='/new_contact' method="post" role="form" class="php-email-form">
+              {% csrf_token %}
               <div class="row">
                 <div class="form-group col-md-6">
                   <label for="name">Your Name</label>
@@ -573,11 +574,12 @@
               <div class="text-center"><button type="submit">Send Message</button></div>
             </form>
           </div>
-
         </div>
-
       </div>
     </section><!-- End Contact Section -->
+
+    {% block content %}
+    {% endblock %}
 
   </main><!-- End #main -->
 
