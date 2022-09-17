@@ -228,7 +228,7 @@ h6 {
 #hero {
   width: 100%;
   height: 100vh;
-  background: url("../img/hector-landscape-.jpg") top center;
+  background: url("../img/Sea-background.jpg") top center;
   background-size: cover;
 }
 
@@ -245,7 +245,7 @@ h6 {
 
 #hero .hero-container {
   position: relative;
-  left: -10%;
+  left: -5%;
   z-index: 2;
   min-width: 300px;
 }

@@ -6,28 +6,50 @@ from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
-from .models import ContactMeForm
+from .forms import ContactMeForm
+from .models import ContactMeModel
 
 
 def index(request):
-    return render(request, 'index.html')
+    form = ContactMeForm()
+    return render(request, 'index.html',  {'form': form})
 
 
 def new_contact(request):
     if request.method == 'POST':
-        login_data = request.POST.dict()
-        name = login_data.get("name")
-        email = login_data.get("email")
-        subject= login_data.get("subject")
-        message = login_data.get("message")
+        form = ContactMeForm(request.POST)
+        if form.is_valid():
+            # ContactMeModel.objects.create(name= form.cleaned_data["name"],
+            #                               email=form.cleaned_data["email"],
+            #                               subject=form.cleaned_data["subject"],
+            #                               message=form.cleaned_data["message"],
+            #                               date=timezone.now())
+            form.save()
+            print('Form submitted with the following info:', form.cleaned_data)
+            return render(request, 'resume/new_contact.html', {'form': form})
+        else:
+            print('Form is not valid')
+    else:
+        form = ContactMeForm()
 
-        ContactMeForm.objects.create(name=name,
-                                     email=email,
-                                     subject=subject,
-                                     message=message,
-                                     date=timezone.now())
+        print('GET method', form)
 
-        print(login_data)
+        return render(request, 'index.html', {'form': form})
+
+
+        # login_data = request.POST.dict()
+        # name = login_data.get("name")
+        # email = login_data.get("email")
+        # subject= login_data.get("subject")
+        # message = login_data.get("message")
+        #
+        # ContactMeForm.objects.create(name=name,
+        #                              email=email,
+        #                              subject=subject,
+        #                              message=message,
+        #                              date=timezone.now())
+        #
+        # print(login_data)
 
         # if form.is_valid(): # todo: add sending email when someone contacts me
         #     subject = form.cleaned_data['subject']
@@ -40,9 +62,9 @@ def new_contact(request):
         #         recipients.append(sender)
         #
         #     send_mail(subject, message, sender, recipients)
-        return render(request, "index.html")
-    else:
-        return render(request, "index.html")
+    #     return render(request, "index.html")
+    # else:
+    #     return render(request, "index.html")
 
 
 # def new_contact(request):

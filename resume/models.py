@@ -2,7 +2,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class ContactMeForm(models.Model):
+class ContactMeModel(models.Model):
 
     name = models.CharField(max_length=250)
     email = models.EmailField(max_length=250)
@@ -14,7 +14,7 @@ class ContactMeForm(models.Model):
         return f"{self.name}, {self.email}, {self.subject}, {self.message}"  # rename object name for easy querying
 
     class Meta:
-        verbose_name = 'Contact Form' # for admin interface (model naming)
+        verbose_name = 'Contact Form'  # for admin interface (model naming)
 
 
 

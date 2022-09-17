@@ -3,15 +3,15 @@ from django.contrib import admin
 # Register your models here.
 
 from django.contrib import admin
-from .models import ContactMeForm
+from .models import ContactMeModel
 
 # Register your models here.
 
 #admin.site.register(Search)
 
 
-@admin.register(ContactMeForm)
-class ContactMeFormAdmin(admin.ModelAdmin):  # customized class
+@admin.register(ContactMeModel)
+class ContactMeModelAdmin(admin.ModelAdmin):  # customized class
     list_display = ('name', 'email', 'subject', 'message', 'date')
     fieldsets = [
             (None, {'fields': ['name']}),
