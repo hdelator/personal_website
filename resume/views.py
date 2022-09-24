@@ -12,23 +12,30 @@ from .models import ContactMeModel
 
 def index(request):
     form = ContactMeForm()
-    return render(request, 'index.html',  {'form': form})
+    print('GET method')
+    return render(request, 'index.html', {'form': form})
 
 
 def new_contact(request):
     if request.method == 'POST':
+        print("Here")
         form = ContactMeForm(request.POST)
+        print(form)
         if form.is_valid():
-            # ContactMeModel.objects.create(name= form.cleaned_data["name"],
-            #                               email=form.cleaned_data["email"],
-            #                               subject=form.cleaned_data["subject"],
-            #                               message=form.cleaned_data["message"],
-            #                               date=timezone.now())
-            form.save()
-            print('Form submitted with the following info:', form.cleaned_data)
-            return render(request, 'resume/new_contact.html', {'form': form})
+            try:
+                # ContactMeModel.objects.create(name= form.cleaned_data["name"],
+                #                               email=form.cleaned_data["email"],
+                #                               subject=form.cleaned_data["subject"],
+                #                               message=form.cleaned_data["message"],
+                #                               date=timezone.now())
+                form.save()
+                print('Form submitted with the following info:', form.cleaned_data)
+                return render(request, 'resume.html', {'form': form})
+            except:
+                pass
         else:
             print('Form is not valid')
+            return render(request, 'resume/new_contact.html', {'form': form})
     else:
         form = ContactMeForm()
 

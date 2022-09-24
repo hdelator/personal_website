@@ -295,7 +295,7 @@ h6 {
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -310,7 +310,7 @@ section {
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-bottom: 20px;
   position: relative;
   color: #173b6c;
@@ -370,7 +370,7 @@ section {
 # Facts
 --------------------------------------------------------------*/
 .facts {
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 .facts .count-box {

@@ -29,6 +29,7 @@
 
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/css/email.css' %}" rel="stylesheet">
 </head>
 
 <body>
@@ -42,10 +43,11 @@
 
       <div class="profile">
         <img src="{% static 'assets/img/hector-portrait-squared.jpg' %}" alt="" class="img-fluid rounded-circle">
-        <h1 class="text-light"><a href="index.html">Héctor de la Torre Casado</a></h1>
+        <h1 class="text-light"><a href="index.html">Héctor de la Torre</a></h1>
         <div class="social-links mt-3 text-center">
           <a href="https://linkedin.com/in/hectordelatorrecasado" class="linkedin"><i class="bx bxl-linkedin"></i></a>
           <a href="https://github.com/hdelator" class="github"><i class="bx bxl-github"></i></a>
+          <a href="https:www.hdelatorre.com" class="website"><i class="bi bi-laptop"></i></a>
         </div>
       </div>
 
@@ -54,8 +56,6 @@
           <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-          <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a></li>
-          <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Services</span></a></li>
           <li><a href="#testimonials" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Testimonials</span></a></li>
           <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
         </ul>
@@ -63,12 +63,15 @@
     </div>
   </header><!-- End Header -->
 
+  {% block content %}
+  {% endblock %}
+
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
       <h1 style="line-height:110%;"> Héctor de la Torre
       </h1>
-      <p>I'm a <span class="typed" data-typed-items="Backend Developer, Data Scientist, Machine Learning Engineer"></span></p>
+      <p>I'm a <span class="typed" data-typed-items="Python Backend Developer, AI/Machine Learning Engineer, Data Scientist"></span></p>
     </div>
   </section><!-- End Hero -->
 
@@ -79,7 +82,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>About</h2>
+          <h2>About Me</h2>
         </div>
 
         <div class="row">
@@ -87,18 +90,15 @@
             <img src="{% static 'assets/img/hector-portrait.jpg' %}" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-            <h3>AI/Machine Learning Team Leader - Developer - Data Scientist</h3>
-            <p class="fst-italic">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-              magna aliqua.
-            </p>
+            <h3>Lead Python Developer - AI Team Leader - Data Scientist</h3>
+            <br>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>10 May 1990</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.hectordelatorrecasado.com</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>+33 749 331 521</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span>www.hdelatorre.com</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>(+33) 749 331 521 </span></li>
                   <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>Toulouse, France</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <strong>Availability:</strong> <span>Worldwide</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
@@ -109,63 +109,54 @@
                   <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span>Available</span></li>
                 </ul>
               </div>
+
+              <section id="facts" class="facts">
+
+                <div class="container">
+
+                <div class="row no-gutters">
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
+                  <div class="count-box">
+                    <i class="bi bi-briefcase-fill"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Years in business</strong></p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
+                  <div class="count-box">
+                    <i class="bi bi-people-fill"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Client accounts</strong><br>$1.2M in revenue growth</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
+                  <div class="count-box">
+                    <i class="bi bi-globe"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Languages</strong><br>English, Spanish, French</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
+                  <div class="count-box">
+                    <i class="bi bi-airplane"></i>
+                    <span data-purecounter-start="0" data-purecounter-end="62" data-purecounter-duration="1" class="purecounter"></span>
+                    <p><strong>Countries visited</strong><br>Work & Personal</p>
+                  </div>
+                </div>
+                </div>
+                </div>
+              </section>
+
             </div>
-            <p>
-              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
-              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
-            </p>
           </div>
         </div>
 
       </div>
     </section><!-- End About Section -->
-
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Skills & Facts</h2>
-        </div>
-
-        <div class="row no-gutters">
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="count-box">
-              <i class="bi bi-briefcase-fill"></i>
-              <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Years in business</strong></p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up">
-            <div class="count-box">
-              <i class="bi bi-people-fill"></i>
-              <span data-purecounter-start="0" data-purecounter-end="232" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Client accounts</strong><br>$1.2M in revenue growth</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="count-box">
-              <i class="bi bi-globe"></i>
-              <span data-purecounter-start="0" data-purecounter-end="3" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Languages</strong><br>English, Spanish, French</p>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-md-flex align-items-md-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="count-box">
-              <i class="bi bi-airplane"></i>
-              <span data-purecounter-start="0" data-purecounter-end="62" data-purecounter-duration="1" class="purecounter"></span>
-              <p><strong>Countries visited</strong><br>Work & Personal</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Facts Section -->
 
     <!-- ======= Resume Section ======= -->
     <section id="resume" class="resume">
@@ -180,15 +171,13 @@
             <h3 class="resume-title">Sumary</h3>
             <div class="resume-item pb-0">
               <h4>Héctor de la Torre Casado</h4>
-              <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
               <ul>
                 <li>10 years of technical and business experience helping companies be data-driven in order to solve business problems</li>
-                <li>Programming experience: Python (PySpark, Pandas, Sklearn, Pytest, Flask, Keras), R, SQL, Matlab, Fortran, Linux </li>
-                <li>Machine learning projects: NLP, Random Forest, K-Means, Image Processing, Neural Networks, Ontologies</li>
+                <li>Programming experience: Python (PySpark, Pandas, Sklearn, Django, FastAPI, Flask, Keras, Pytest), R, SQL, HTML, CSS, Matlab, Fortran, Linux </li>
+                <li>Machine learning projects: Natural Language Processing, Classification/Regression (Random Forest, K-Means...), Image Processing, Neural Networks, Ontologies</li>
                 <li>Database and cloud-based software: Skywise (Palantir), Github, Oracle, SAP, MS Access, Protégé</li>
                 <li>Master Black Belt (MBB) certification in Transactional Process Improvement (TPI Kaizen): Instructor and leader </li>
                 <li>Languages: Bilingual in English and Spanish, full professional proficiency in French</li>
-              </ul>
               </ul>
             </div>
 
@@ -230,7 +219,7 @@
                   </div>
 
                   <div class="progress">
-                    <span class="skill">SQL <i class="val">90%</i></span>
+                    <span class="skill">SaaS Application Development <i class="val">90%</i></span>
                     <div class="progress-bar-wrap">
                       <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
@@ -244,9 +233,23 @@
                   </div>
 
                   <div class="progress">
-                    <span class="skill">R <i class="val">75%</i></span>
+                    <span class="skill">CI/CD pipelines <i class="val">80%</i></span>
                     <div class="progress-bar-wrap">
-                      <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="progress">
+                    <span class="skill">SQL <i class="val">90%</i></span>
+                    <div class="progress-bar-wrap">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </div>
+
+                  <div class="progress">
+                    <span class="skill">R <i class="val">70%</i></span>
+                    <div class="progress-bar-wrap">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                   </div>
 
@@ -292,9 +295,9 @@
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <h3 class="resume-title">Professional Experience</h3>
             <div class="resume-item">
-              <h4>Lead Backend Developer</h4>
+              <h4>Lead Python LBackend Developer</h4>
               <h4>AI/Machine Learning Team Leader</h4>
-              <h5>Apr 2021 - Present</h5>
+              <h5>Jan 2021 - Present</h5>
               <p><em>Airbus (Alten), Toulouse, France </em></p>
               <ul>
                 <li>Design Python applications for multilevel industrial systems in order to help industrial architects
@@ -344,7 +347,7 @@
             <div class="resume-item">
               <h4>Intern - Structural Dynamics and Aeroelasticity </h4>
               <h5>Sept 2015 - Jan 2021</h5>
-              <p><em>Fortive (S&P 500 company), Fairport, New York</em></p>
+              <p><em>Airbus, Madrid, Spain</em></p>
               <ul>
                 <li>Post-processed and analyzed data for ditching certification processes (SMart Aircrafts in Emergency
                   Situations) from tests executed at the INSEAN Research Institute (Italy)</li>
@@ -358,97 +361,6 @@
       </div>
     </section><!-- End Resume Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Portfolio</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row" data-aos="fade-up">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-wrap">
-              <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">
-              <div class="portfolio-links">
-                <a href="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-    <!-- ======= Services Section ======= -->
-    <section id="services" class="services">
-      <div class="container">
-
-        <div class="section-title">
-          <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row">
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
-            <div class="icon"><i class="bi bi-briefcase"></i></div>
-            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon"><i class="bi bi-card-checklist"></i></div>
-            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon"><i class="bi bi-bar-chart"></i></div>
-            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon"><i class="bi bi-binoculars"></i></div>
-            <h4 class="title"><a href="">Magni Dolores</a></h4>
-            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon"><i class="bi bi-brightness-high"></i></div>
-            <h4 class="title"><a href="">Nemo Enim</a></h4>
-            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-          </div>
-          <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon"><i class="bi bi-calendar4-week"></i></div>
-            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Services Section -->
-
     <!-- ======= Testimonials Section ======= -->
     <section id="testimonials" class="testimonials section-bg">
       <div class="container">
@@ -459,6 +371,40 @@
 
         <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
           <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Hector has the most extensive knowledge of software at our company, coming with original ideas to solve
+                  issues in a fast paced environment. In this project he was involved in app development with Python,
+                  data treatment and CI/CD pipeline implementation. Hector went the extra mile picking up extra responsibilities
+                  and supporting other teams to make sure that the product was delivered on time to the client.
+                  He has good communication skills, provides quality work and, more importantly, is fun to be around.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/img/testimonials/Marcela.jpg' %}" class="testimonial-img" alt="">
+                <h3>Marcela Rojas, Ph.D.</h3>
+                <h4>Project Manager/Scrum Master</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Hector and I have worked together analyzing business data of more than 12,000 accounts across 72
+                  countries. His impactful findings have led to a global revenue growth of $1.2M, helping us define the
+                  core strategy of the different regions. Hector is passionate about writing code, but he has great
+                  knowledge of other important areas such as business, sales and engineering. He is easy to get along
+                  with and well-liked by our clients and co-workers.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/img/testimonials/Nikhil.jpg' %}" class="testimonial-img" alt="">
+                <h3>Nikhil Balagopal</h3>
+                <h4>Sr. Business Intelligence Analyst </h4>
+              </div>
+            </div><!-- End testimonial item -->
 
             <div class="swiper-slide">
               <div class="testimonial-item" data-aos="fade-up">
@@ -473,32 +419,6 @@
                 <img src="{% static 'assets/img/testimonials/Yolanda.jpg' %}" class="testimonial-img" alt="">
                 <h3>Yolanda Medina</h3>
                 <h4>Senior Sales Manager at GE</h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="{% static 'assets/img/testimonials/Nikhil.jpg' %}" class="testimonial-img" alt="">
-                <h3>Nikhil Balagopal</h3>
-                <h4>Sr. Business Intelligence Analyst </h4>
-              </div>
-            </div><!-- End testimonial item -->
-
-            <div class="swiper-slide">
-              <div class="testimonial-item" data-aos="fade-up" data-aos-delay="100">
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-                <img src="{% static 'assets/img/testimonials/testimonials-1.jpg' %}" class="testimonial-img" alt="">
-                <h3>Person_3</h3>
-                <h4>Sr. Business Intelligence Analyst </h4>
               </div>
             </div><!-- End testimonial item -->
 
@@ -517,7 +437,6 @@
         </div>
 
         <div class="row" data-aos="fade-in">
-
           <div class="col-lg-5 d-flex align-items-stretch">
             <div class="info">
               <div class="address">
@@ -535,44 +454,44 @@
               <div class="phone">
                 <i class="bi bi-phone"></i>
                 <h4>Phone:</h4>
-                <p>+34 722 120 575 (Spain)
-                <br>+33 749 331 521 (France)
+                <p>(+33) 749 331 521 (France)
+                <br>(+34) 722 120 575 (Spain)
                 </p>
               </div>
-
               <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11557.700121775522!2d1.4259236172826875!3d43.597691204047514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12aebb7a9123c86d%3A0xe48e1097a0202044!2sSt%20-%20Cyprien%2C%20Toulouse%2C%20France!5e0!3m2!1sen!2ses!4v1658829321077!5m2!1sen!2ses" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
             </div>
-
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
             <form action="{% url 'new_contact' %}" method="post" role="form">
-              {% csrf_token %}
-              <div class="row">
-                {{ form.name.errors }}
-                <div class="form-group col-md-6">
-                  <label for="{{ form.subject }}">Your name:</label>
-                  {{ form.subject }}
-                  <input type="text" name="name" class="form-control" id="name" required>
-                </div>
-                <div class="form-group col-md-6">
-                  <label for="name">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email" required>
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="name">Subject</label>
-                <input type="text" class="form-control" name="subject" id="subject" required>
-              </div>
-              <div class="form-group">
-                <label for="name">Message</label>
-                <textarea class="form-control" name="message" rows="10" required></textarea>
-              </div>
-              <table>
-              {{ form.as_table }}
-              </table>
-            <input type="submit" value="Send message">
+             {% csrf_token %} <!-- protection from attacks-->
+              {{ form }}
+              <input type="submit" value="Send message">
             </form>
+          </div>
+<!--              <div class="row">-->
+<!--                {{ form.name.errors }}-->
+<!--                <div class="form-group col-md-6">-->
+<!--                  <label for="subject">Name:</label>-->
+<!--                  <input type="text" name="name" class="form-control" id="name" required>-->
+<!--                </div>-->
+<!--                <div class="form-group col-md-6">-->
+<!--                  <label for="name">Email</label>-->
+<!--                  <input type="email" class="form-control" name="email" id="email" required>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                <label for="name">Subject</label>-->
+<!--                <input type="text" class="form-control" name="subject" id="subject" required>-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                <label for="name">Message</label>-->
+<!--                <textarea class="form-control" name="message" rows="10" required></textarea>-->
+<!--              </div>-->
+
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
 
 <!--          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">-->
 <!--            <form action='/new_contact' method="post" role="form" class="php-email-form">-->
@@ -603,12 +522,9 @@
 <!--              <div class="text-center"><button type="submit">Send Message</button></div>-->
 <!--            </form>-->
 <!--          </div>-->
-        </div>
-      </div>
-    </section><!-- End Contact Section -->
 
-    {% block content %}
-    {% endblock %}
+
+
 
   </main><!-- End #main -->
 

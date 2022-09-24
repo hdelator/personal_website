@@ -7,7 +7,7 @@ class ContactMeModel(models.Model):
     name = models.CharField(max_length=250)
     email = models.EmailField(max_length=250)
     subject = models.CharField(max_length=500)
-    message = models.CharField(max_length=10000)
+    message = models.TextField(max_length=10000)
     date = models.DateTimeField(auto_now=True)
 
     def __str__(self):
