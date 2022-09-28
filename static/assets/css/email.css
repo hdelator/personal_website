@@ -4,3 +4,24 @@ input[type=text], input[type=email], textarea {
  margin: 8px 0;
  display: inline-block;
 }
+
+/*--------------------------------------------------------------
+# Pop up message
+--------------------------------------------------------------*/
+
+.custom_alert {
+  position: fixed
+  top: 0px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 400px;
+  padding: 6px;
+  background: #32CD32; /* Green #32CD32 */
+  color: white;
+  font_family: sans-serif;
+  text-align: center;
+  border: 1px solid: #aaaaaa;
+  border-radius: 5px;
+  box-shadow: 0 0 10 px rgba(0,0,0,0.2);
+}

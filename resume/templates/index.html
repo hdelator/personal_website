@@ -63,13 +63,10 @@
     </div>
   </header><!-- End Header -->
 
-  {% block content %}
-  {% endblock %}
-
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container" data-aos="fade-in">
-      <h1 style="line-height:110%;"> Héctor de la Torre
+      <h1 style="line-height:110%;">Héctor de la Torre
       </h1>
       <p>I'm a <span class="typed" data-typed-items="Python Backend Developer, AI/Machine Learning Engineer, Data Scientist"></span></p>
     </div>
@@ -464,68 +461,14 @@
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
             <form action="{% url 'new_contact' %}" method="post" role="form">
-             {% csrf_token %} <!-- protection from attacks-->
-              {{ form }}
+              {% csrf_token %} <!-- protection against Cross Site Request Forgeries attacks-->
+              {{ form }} <!-- set the novalidate attribute if we don't want any validation of the form fields-->
               <input type="submit" value="Send message">
             </form>
           </div>
-<!--              <div class="row">-->
-<!--                {{ form.name.errors }}-->
-<!--                <div class="form-group col-md-6">-->
-<!--                  <label for="subject">Name:</label>-->
-<!--                  <input type="text" name="name" class="form-control" id="name" required>-->
-<!--                </div>-->
-<!--                <div class="form-group col-md-6">-->
-<!--                  <label for="name">Email</label>-->
-<!--                  <input type="email" class="form-control" name="email" id="email" required>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="form-group">-->
-<!--                <label for="name">Subject</label>-->
-<!--                <input type="text" class="form-control" name="subject" id="subject" required>-->
-<!--              </div>-->
-<!--              <div class="form-group">-->
-<!--                <label for="name">Message</label>-->
-<!--                <textarea class="form-control" name="message" rows="10" required></textarea>-->
-<!--              </div>-->
-
         </div>
       </div>
     </section><!-- End Contact Section -->
-
-<!--          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">-->
-<!--            <form action='/new_contact' method="post" role="form" class="php-email-form">-->
-<!--              {% csrf_token %}-->
-<!--              <div class="row">-->
-<!--                <div class="form-group col-md-6">-->
-<!--                  <label for="name">Your Name</label>-->
-<!--                  <input type="text" name="name" class="form-control" id="name" required>-->
-<!--                </div>-->
-<!--                <div class="form-group col-md-6">-->
-<!--                  <label for="name">Your Email</label>-->
-<!--                  <input type="email" class="form-control" name="email" id="email" required>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="form-group">-->
-<!--                <label for="name">Subject</label>-->
-<!--                <input type="text" class="form-control" name="subject" id="subject" required>-->
-<!--              </div>-->
-<!--              <div class="form-group">-->
-<!--                <label for="name">Message</label>-->
-<!--                <textarea class="form-control" name="message" rows="10" required></textarea>-->
-<!--              </div>-->
-<!--              <div class="my-3">-->
-<!--                <div class="loading">Loading</div>-->
-<!--                <div class="error-message"></div>-->
-<!--                <div class="sent-message">Your message has been sent. Thank you!</div>-->
-<!--              </div>-->
-<!--              <div class="text-center"><button type="submit">Send Message</button></div>-->
-<!--            </form>-->
-<!--          </div>-->
-
-
-
-
   </main><!-- End #main -->
 
 <!--  &lt;!&ndash; ======= Footer ======= &ndash;&gt;-->
@@ -552,6 +495,8 @@
 
   <!-- Template Main JS File -->
   <script src="{% static 'assets/js/main.js' %}"></script>
+
+
 
 </body>
 

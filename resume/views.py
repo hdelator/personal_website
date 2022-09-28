@@ -1,13 +1,8 @@
-from django.shortcuts import render
-
-from django.http import HttpResponse, Http404, HttpResponseRedirect
-from django.template import loader
-from django.shortcuts import render, get_object_or_404
-from django.urls import reverse
-from django.views import generic
-from django.utils import timezone
+from django.shortcuts import render, get_object_or_404, redirect
+from django.http import HttpResponseRedirect
 from .forms import ContactMeForm
-from .models import ContactMeModel
+from django.core.mail import send_mail
+from django.contrib import messages
 
 
 def index(request):
@@ -18,28 +13,38 @@ def index(request):
 
 def new_contact(request):
     if request.method == 'POST':
-        print("Here")
+        print("POST initiated")
         form = ContactMeForm(request.POST)
-        print(form)
+
+        for field in form: # for debugging
+            print("Field Error:", field.name, field.errors)
+
         if form.is_valid():
-            try:
-                # ContactMeModel.objects.create(name= form.cleaned_data["name"],
-                #                               email=form.cleaned_data["email"],
-                #                               subject=form.cleaned_data["subject"],
-                #                               message=form.cleaned_data["message"],
-                #                               date=timezone.now())
-                form.save()
-                print('Form submitted with the following info:', form.cleaned_data)
-                return render(request, 'resume.html', {'form': form})
-            except:
-                pass
-        else:
-            print('Form is not valid')
+            print('Form valid!')
+            name = form.cleaned_data["name"]
+            email = form.cleaned_data["email"]
+            subject = form.cleaned_data["subject"]
+            message = form.cleaned_data["message"]
+
+            form.save()  # add to database
+
+            # Send email to myself when successful form has been submitted
+            # try:  # todo: fix
+            #     recipients = ['htorrecasado@gmail.com']
+            #     send_mail(subject, message, from_email=email, recipient_list=recipients)
+            # except:
+            #     pass
+
+            messages.info(request, 'Your message has been sent successfully!')
+            # messages.success(request, 'Your message has been sent successfully') # alternative way
+
+            form = ContactMeForm()  # empty form before redirecting
+
             return render(request, 'resume/new_contact.html', {'form': form})
-    else:
+    else:  # GET
         form = ContactMeForm()
 
-        print('GET method', form)
+        print('GET method')
 
         return render(request, 'index.html', {'form': form})
 
