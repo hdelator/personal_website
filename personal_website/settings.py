@@ -23,7 +23,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&
 # DEBUG = True
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['http://www.hdelatorre.com/']
+ALLOWED_HOSTS = ['eb-django-app-dev.elasticbeanstalk.com']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
