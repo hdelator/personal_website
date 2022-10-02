@@ -135,9 +135,9 @@
     new Typed('.typed', {
       strings: typed_strings,
       loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
-      backDelay: 2000
+      typeSpeed: 40,
+      backSpeed: 20,
+      backDelay: 1500
     });
   }
 
@@ -217,11 +217,11 @@
    */
   new Swiper('.testimonials-slider', {
     speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
+    loop: false,
+//    autoplay: {
+//      delay: 5000,
+//      disableOnInteraction: true
+//    },
     slidesPerView: 'auto',
     pagination: {
       el: '.swiper-pagination',
@@ -235,7 +235,7 @@
       },
 
       1200: {
-        slidesPerView: 3,
+        slidesPerView: 2,
         spaceBetween: 20
       }
     }
@@ -248,7 +248,7 @@
     AOS.init({
       duration: 1000,
       easing: 'ease-in-out',
-      once: true,
+      once: false,
       mirror: false
     })
   });

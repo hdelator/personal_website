@@ -243,6 +243,27 @@ h6 {
   z-index: 1;
 }
 
+#hero .custom_alert--visible {
+  position: fixed
+  top: 0px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 400px;
+  padding: 6px;
+  background: #32CD32; /* Green #32CD32 */
+  color: white;
+  font_family: sans-serif;
+  text-align: center;
+  border: 1px solid: #aaaaaa;
+  border-radius: 5px;
+  box-shadow: 0 0 10 px rgba(0,0,0,0.2);
+
+  visibility: hidden;
+  opacity:0;
+}
+
+
 #hero .hero-container {
   position: relative;
   left: -5%;
@@ -289,13 +310,14 @@ h6 {
     line-height: 24px;
     margin-bottom: 30px;
   }
+
 }
 
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
 section {
-  padding: 60px 0;
+  padding: 30px 0;
   overflow: hidden;
 }
 
@@ -310,7 +332,7 @@ section {
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding-bottom: 20px;
   position: relative;
   color: #173b6c;
@@ -370,7 +392,7 @@ section {
 # Facts
 --------------------------------------------------------------*/
 .facts {
-  padding-bottom: 30px;
+  padding-bottom: 0px;
 }
 
 .facts .count-box {
