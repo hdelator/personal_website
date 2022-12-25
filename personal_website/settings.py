@@ -20,10 +20,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'cg#p$g+j9tax!#a3cup@1$8obt2_+&k3q+pmu)5%asj6yjpkag')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+DEBUG = True
+#DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['django-env.eba-xdnxudmx.eu-west-3.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['resume-env.eba-5irp7f5c.us-west-2.elasticbeanstalk.com', '127.0.0.1']
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
