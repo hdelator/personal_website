@@ -928,6 +928,28 @@ section {
   color: #fff;
 }
 
+
+
+#####################################
+.contact #post-form {
+  width: 100%;
+  padding: 30px;
+  background: #fff;
+  box-shadow: 0 0 24px 0 rgba(0, 0, 0, 0.12);
+}
+
+.contact #post-message textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+  height: 200px;
+}
+
+
+########################
+
+
+
 .contact .php-email-form {
   width: 100%;
   padding: 30px;

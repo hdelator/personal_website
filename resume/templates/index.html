@@ -28,6 +28,7 @@
   <!-- Template Main CSS File -->
   <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
   <link href="{% static 'assets/css/email.css' %}" rel="stylesheet">
+
 </head>
 
 <body>
@@ -372,7 +373,7 @@
                 <p>
                   <i class="bx bxs-quote-alt-left quote-icon-left"></i>
                   Hector has the most extensive knowledge of software at our company, coming with original ideas to solve
-                  issues in a fast paced environment. In this project he was involved in app development with Python,
+                  issues in a fast-paced environment. In this project he was involved in app development with Python,
                   data treatment and CI/CD pipeline implementation. Hector went the extra mile picking up extra responsibilities
                   and supporting other teams to make sure that the product was delivered on time to the client.
                   He has good communication skills, provides quality work and, more importantly, is fun to be around.
@@ -457,15 +458,38 @@
             </div>
           </div>
 
-          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-            <form action="{% url 'new_contact' %}" method="post" role="form">
-              {% csrf_token %} <!-- protection against Cross Site Request Forgeries attacks-->
-              {{ form }} <!-- set the novalidate attribute if we don't want any validation of the form fields-->
-              <input type="submit" value="Send message">
-            </form>
-          </div>
+            <div class="col-lg-7 mt-5 mt-lg-0 d-flex ali  gn-items-stretch">
+              <form action="{% url 'index' %}" method="POST" id="post-form" >
+                      {% csrf_token %}
+                      <div class="fieldWrapper">
+                          {{ form}}
+                      </div>
+                      <input type="submit" value="Send">
+              </form>
+            </div>
         </div>
-      </div>
+
+<!--          <div class="row white">-->
+<!--            <div class="columns large-12">-->
+<!--                <form method="POST" id="post-form">-->
+<!--                    {% csrf_token %}-->
+<!--                    <div class="fieldWrapper" id="the_post">-->
+<!--                        {{ form.message }}-->
+<!--                    </div>-->
+<!--                    <div id="results"></div>-->
+<!--                    <input type="submit" value="Post" class="tiny button">-->
+<!--                </form>-->
+<!--            </div>-->
+<!--          </div>-->
+
+<!--          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">-->
+<!--            <form action="" method="post" role="form">-->
+<!--              {% csrf_token %} &lt;!&ndash; protection against Cross Site Request Forgeries attacks&ndash;&gt;-->
+<!--              {{ form }} &lt;!&ndash; set the novalidate attribute if we don't want any validation of the form fields&ndash;&gt;-->
+<!--              <input type="submit" value="Send message">-->
+<!--            </form>-->
+<!--          </div>-->
+        </div>
     </section><!-- End Contact Section -->
   </main><!-- End #main -->
 
@@ -492,7 +516,10 @@
   <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
 
   <!-- Template Main JS File -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/form.js' %}"></script>
+  <script src="{% static 'assets/js/cookies.js' %}"></script>
 
 </body>
 
