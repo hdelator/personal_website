@@ -1,23 +1,19 @@
 from django.contrib import admin
-
-# Register your models here.
-
-from django.contrib import admin
 from .models import ContactMeModel
+from django.contrib.auth.models import Group
+
+admin.site.unregister(Group) # removes the group icon, not used
 
 # Register your models here.
-
-#admin.site.register(Search)
-
 
 @admin.register(ContactMeModel)
-class ContactMeModelAdmin(admin.ModelAdmin):  # customized class
-    list_display = ('name', 'email', 'subject', 'message', 'date')
+class PostAdmin(admin.ModelAdmin):  # customized class
+    list_display = ('name', 'email', 'subject', 'message', 'created')
     fieldsets = [
-            (None, {'fields': ['name']}),
-            ('Date Information', {'fields': ['date'], 'classes': ['collapse']}),
+            # (None, {'fields': ['name']}),
+            ('Date Information', {'fields': ['created'], 'classes': ['collapse']}),
         ]
-    list_filter = ['date']  # filter table on the side
-    search_fields = ['name', 'email', 'subject', 'message']
+    list_filter = ['created']  # filter table on the side
+    search_fields = ['name', 'email', 'subject']
 
 
