@@ -25,9 +25,11 @@ class ContactMeForm(forms.ModelForm):
                 'required': True,
                 'placeholder': 'Subject...'
             }),
-            'message': forms.TextInput(attrs={
+            'message': forms.Textarea(attrs={
                 'id': 'post-message',
                 'required': True,
+                'cols': 40,
+                'rows': 10,
                 'placeholder': 'Type a message here...',
             })
             }

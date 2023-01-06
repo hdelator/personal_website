@@ -10,7 +10,7 @@ admin.site.unregister(Group) # removes the group icon, not used
 class PostAdmin(admin.ModelAdmin):  # customized class
     list_display = ('name', 'email', 'subject', 'message', 'created')
     fieldsets = [
-            (None, {'fields': ['name']}),
+            # (None, {'fields': ['name']}),
             ('Date Information', {'fields': ['created'], 'classes': ['collapse']}),
         ]
     list_filter = ['created']  # filter table on the side

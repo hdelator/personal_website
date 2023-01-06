@@ -16,7 +16,7 @@ $('#post-form').on('submit', function(event){
 function create_post() {
     console.log("create post is working!") // sanity check
     $.ajax({
-        url : "index", // the endpoint
+        url : "/", // the endpoint
         type : "POST", // http method
         data : {
             name : $('#post-name').val(),
@@ -32,6 +32,7 @@ function create_post() {
             $('#post-message').val(''); // remove the value from the input
             console.log(json); // log the returned json to the console
             console.log("success"); // another sanity check
+            alert("Form sent successfully!")
         },
 
         // handle a non-successful response
